@@ -1,0 +1,25 @@
+<% layout('layouts/boilerplate')%>
+
+<h1>List of Registered Patients</h1>
+<div>
+    <a href="/patients/new">Add Patients</a>
+</div>
+<% for (let patient of patients){%>
+<div class="card" mb-3>
+    <div class="row">
+        <div class="col-md-4">
+            <img class="img-fluid" alt="" src="<%=patient.image%>">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title"><%= patient.name %> </h5>
+                <p class="card-text"><%= patient.description %></p>
+                <p class="card-text">
+                    <small class="text-muted"><%= patient.sex%></small>
+                </p>
+                <a class="btn btn-primary" href="/patients/<%=patient._id%>">View <%=patient.name%></a>
+            </div>
+        </div>
+    </div>
+</div>
+<% }%>

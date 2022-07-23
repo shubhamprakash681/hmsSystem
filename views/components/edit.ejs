@@ -1,0 +1,43 @@
+
+<% layout('layouts/boilerplate')%>
+<div class="row">
+    <h1 class="text-center">Edit Campground</h1>
+    <div class="col-6 offset-3">
+        <form action="/patients/<%=patient._id%>?_method=PUT" method="POST">
+            <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-control" type="text" id="name" name="patient[name]"
+                    value="<%=patient.name %>">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="sex">Sex</label>
+                <input class="form-control" type="text" id="sex" name="patient[sex]"
+                    value="<%=patient.sex %>">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="image">image Url</label>
+                <input class="form-control" type="text" id="image" name="patient[image]"
+                    value="<%=patient.image %>">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="contact">patient contact</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="contact-label"></span>
+                    <input type="text" class="form-control" id="contact" placeholder=" 0" aria-label="contact"
+                        aria-describedby="contact-label" name="patient[contact]" value="<%=patient.contact %>">
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" id="description"
+                    name="patient[description]"><%= patient.description%></textarea>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-info">Update patient</button>
+            </div>
+        </form>
+        <a href="/patients/<%= patient._id%>">Back To Patient Details</a>
+
+    </div>
+</div>

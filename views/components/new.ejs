@@ -1,0 +1,37 @@
+<% layout('layouts/boilerplate')%>
+<div class="row">
+    <h1 class="text-center">Please Register here</h1>
+    <div class="col-6 offset-3">
+        <form action="/patients" method="POST">
+            <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-control" type="text" id="name" name="patient[name]" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="sex">Sex</label>
+                <input class="form-control" type="text" id="sex" name="patient[sex]"required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="image">Image Upload</label>
+                <input class="form-control" type="text" id="image" name="patient[image]" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="contact">Patient Contact Details</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="contact-label"></span>
+                    <input type="text" class="form-control" id="contact" placeholder="+91" aria-label="contact"
+                        aria-describedby="contact-label" name="patient[contact]" required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="description">Describe briefly your symptoms!</label>
+                <textarea class="form-control" type="text" id="description" name="patient[description]" required></textarea>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Add patient</button>
+            </div>
+        </form>
+        <a href="/patients">All patients Details</a>
+    </div>
+</div>
